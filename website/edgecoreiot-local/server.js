@@ -96,17 +96,20 @@ wss.on('connection', (ws) => {
 //     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
-// This works on all versions of Express/Node
+// Page routes
+app.get('/',        (req, res) => res.sendFile(path.join(__dirname, 'public', 'home.html')));
+app.get('/home',    (req, res) => res.sendFile(path.join(__dirname, 'public', 'home.html')));
+app.get('/product', (req, res) => res.sendFile(path.join(__dirname, 'public', 'product.html')));
+app.get('/blog',    (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog.html')));
+
+// Fallback: portal, resources, support, dashboard → index.html (SPA)
 app.use((req, res, next) => {
-    // If the request isn't for an API or a static file, send index.html
     if (!req.url.startsWith('/api')) {
         res.sendFile(path.join(__dirname, 'public', 'index.html'));
     } else {
         next();
     }
-}); 
-
-// Note: The app.use() fallback above handles all non-API routes for Express 5 compatibility.
+});
 
 server.listen(PORT, () => {
     console.log(`\n🚀 EdgeCoreIoT Platform is LIVE`);

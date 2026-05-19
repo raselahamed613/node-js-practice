@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeCoreIoT | Blog</title>
+    <meta name="description" content="EdgeCore IoT blog — industry insights, firmware guides, hardware tips and product updates.">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col">
+
+    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center">
+        <a href="/home" class="flex items-center" style="gap:10px;text-decoration:none;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 12px rgba(19,196,161,0.35);">
+                <span style="color:#fff;font-size:20px;font-weight:900;">E</span>
+            </div>
+            <div style="display:flex;flex-direction:column;line-height:1.1;">
+                <span style="color:#fff;font-size:18px;font-weight:800;letter-spacing:0.5px;">EdgeCore</span>
+                <span style="color:#13c4a1;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;">IOT Systems</span>
+            </div>
+        </a>
+        <nav class="flex space-x-1 md:space-x-3 text-sm font-medium mt-3 md:mt-0 flex-wrap gap-y-2">
+            <a href="/home"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Home</a>
+            <a href="/product"   class="px-3 py-2 rounded text-slate-300 hover:text-white">Product</a>
+            <a href="/shop"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Shop</a>
+            <a href="/blog"      class="px-3 py-2 rounded text-cyan-400 hover:text-cyan-300 font-semibold">Blog</a>
+            <a href="/resources" class="px-3 py-2 rounded text-slate-300 hover:text-white">Videos &amp; Info</a>
+            <a href="/support"   class="px-3 py-2 rounded text-slate-300 hover:text-white">Support</a>
+            <a href="/portal"    class="bg-cyan-600 text-white px-4 py-2 rounded-md hover:bg-cyan-500 transition-colors">Console Login</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-8 space-y-10">
+
+        <!-- Page Header -->
+        <div class="border-b border-slate-800 pb-6">
+            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-950/50 border border-cyan-800/60 px-3 py-1 rounded-full">Knowledge Base</span>
+            <h1 class="text-4xl font-black text-white mt-4 mb-2">EdgeCore Blog</h1>
+            <p class="text-slate-400">Firmware guides, hardware tips, industry insights and product updates from the EdgeCore engineering team.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2">
+            <button class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white" onclick="filterPosts('all', this)">All</button>
+            <button class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterPosts('guide', this)">Guides</button>
+            <button class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterPosts('update', this)">Product Updates</button>
+            <button class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterPosts('industry', this)">Industry</button>
+            <button class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterPosts('firmware', this)">Firmware</button>
+        </div>
+
+        <!-- Featured Post -->
+        <div class="post-card rounded-2xl overflow-hidden" data-cat="guide" style="background:linear-gradient(135deg,#0a1628,#0d2137);border:1px solid #1e3a4a;">
+            <div class="p-8 md:flex gap-8 items-center">
+                <div class="flex-shrink-0 mb-6 md:mb-0">
+                    <div style="width:120px;height:120px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:48px;">⚡</div>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs bg-cyan-900/60 text-cyan-400 border border-cyan-800/50 px-2 py-0.5 rounded-full">Featured</span>
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full">Guide</span>
+                    </div>
+                    <h2 class="text-2xl font-black text-white mb-2">Getting Started with EdgeCore V16: Full Deployment Guide</h2>
+                    <p class="text-slate-400 text-sm mb-4">Step-by-step walkthrough covering hardware setup, Modbus sensor wiring, MQTT broker configuration, and first live telemetry read — everything from unboxing to live dashboard in under 30 minutes.</p>
+                    <div class="flex items-center justify-between flex-wrap gap-3">
+                        <div class="flex items-center gap-3 text-xs text-slate-500">
+                            <span>📅 May 15, 2026</span>
+                            <span>⏱ 12 min read</span>
+                            <span>👤 EdgeCore Team</span>
+                        </div>
+                        <button onclick="openPost('Getting Started with EdgeCore V16')" class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs px-5 py-2 rounded-lg font-semibold transition-colors">Read Article →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="firmware" onclick="openPost('OTA Firmware Update Over GSM')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#0d1f2d,#0a2a2a);">📡</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-violet-900/60 text-violet-400 border border-violet-800/50 px-2 py-0.5 rounded-full">Firmware</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">OTA Firmware Update Over GSM — No Downtime</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">How we implemented packet-validated OTA updates that survive poor signal conditions and power interruptions without bricking the device.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>May 10, 2026</span><span>8 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="guide" onclick="openPost('Modbus RS485 Wiring')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#0d2010,#0a2820);">🏭</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-emerald-900/60 text-emerald-400 border border-emerald-800/50 px-2 py-0.5 rounded-full">Guide</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">RS485 Wiring for Modbus Sensors: Best Practices</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">Common wiring mistakes, termination resistor placement, cable shielding techniques, and how to debug communication errors with the serial monitor.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>May 5, 2026</span><span>10 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="update" onclick="openPost('V17.1 Launch')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#1a0d2d,#0d1a2a);">🚀</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-sky-900/60 text-sky-400 border border-sky-800/50 px-2 py-0.5 rounded-full">Product Update</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">Introducing EdgeCore V17.1 — IP65 with OTA</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">Full changelog and feature breakdown of the V17.1 Industrial Node — new overcurrent protection circuits, improved GSM failover, and IP65-rated enclosure compatibility.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>Apr 28, 2026</span><span>5 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="industry" onclick="openPost('IoT in Chemical Plants')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#1a0a00,#2a1200);">🧪</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-amber-900/60 text-amber-400 border border-amber-800/50 px-2 py-0.5 rounded-full">Industry</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">IoT Hardware in Chemical Plants: Challenges & Solutions</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">How EdgeCore hardware survives corrosive atmospheres, extreme temperatures, and high EMI environments where consumer-grade IoT modules fail within weeks.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>Apr 20, 2026</span><span>7 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="firmware" onclick="openPost('MQTT Topic Structure')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#0a1a10,#0d2a1a);">🔗</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-violet-900/60 text-violet-400 border border-violet-800/50 px-2 py-0.5 rounded-full">Firmware</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">Designing a Scalable MQTT Topic Structure for IoT Fleets</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">Our recommended topic hierarchy — devices/{id}/telemetry, devices/{id}/cmd, devices/{id}/ota — and why it scales cleanly from 1 to 1000 devices.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>Apr 12, 2026</span><span>6 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 cursor-pointer" data-cat="industry" onclick="openPost('LiPo Battery Management')">
+                <div class="h-36 flex items-center justify-center text-5xl" style="background:linear-gradient(135deg,#0a1020,#0d182a);">🔋</div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs bg-amber-900/60 text-amber-400 border border-amber-800/50 px-2 py-0.5 rounded-full">Industry</span>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-2">LiPo Battery Management for Long-Term Field Deployments</h3>
+                    <p class="text-slate-400 text-xs flex-grow mb-4">Charging circuit design, deep discharge protection, and thermal management strategies for LiPo cells operating in outdoor enclosures year-round.</p>
+                    <div class="flex justify-between text-xs text-slate-500 pt-3 border-t border-slate-800">
+                        <span>Apr 3, 2026</span><span>9 min read</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Newsletter -->
+        <div class="rounded-2xl p-8 text-center" style="background:linear-gradient(135deg,#0a2a2a,#0d2137);border:1px solid #1e4a4a;">
+            <h2 class="text-2xl font-bold text-white mb-2">Stay in the Loop</h2>
+            <p class="text-slate-400 text-sm mb-6">Get new articles, firmware changelogs, and hardware updates delivered to your inbox.</p>
+            <form onsubmit="subscribeNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input id="nl-email" type="email" placeholder="your@email.com" class="flex-grow bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500 placeholder-slate-500">
+                <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-6 py-2.5 rounded-lg transition-colors whitespace-nowrap">Subscribe</button>
+            </form>
+            <p id="nl-msg" class="text-emerald-400 text-xs mt-3 hidden">✓ Subscribed! You'll hear from us soon.</p>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500 font-mono">
+        &copy; 2026 EdgeCoreIoT Framework Platform — Local Systems Engineering
+    </footer>
+
+    <script>
+        function filterPosts(cat, btn) {
+            document.querySelectorAll('.post-card').forEach(c => {
+                if (cat === 'all' || c.dataset.cat === cat) {
+                    c.style.display = '';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('.cat-btn').forEach(b => {
+                b.className = 'cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700';
+            });
+            btn.className = 'cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white';
+        }
+
+        function openPost(title) {
+            alert(`Opening article: "${title}"\n\n(Full article pages coming soon)`);
+        }
+
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            const email = document.getElementById('nl-email').value;
+            if (!email) return;
+            document.getElementById('nl-msg').classList.remove('hidden');
+            document.getElementById('nl-email').value = '';
+        }
+    </script>
+</body>
+</html>

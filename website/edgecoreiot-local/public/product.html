@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeCoreIoT | Products</title>
+    <meta name="description" content="Browse the full EdgeCore hardware ecosystem — V16 Hub, V17.1 Industrial Node, Sensor Kits and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col">
+
+    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center">
+        <a href="/home" class="flex items-center" style="gap:10px;text-decoration:none;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 12px rgba(19,196,161,0.35);">
+                <span style="color:#fff;font-size:20px;font-weight:900;">E</span>
+            </div>
+            <div style="display:flex;flex-direction:column;line-height:1.1;">
+                <span style="color:#fff;font-size:18px;font-weight:800;letter-spacing:0.5px;">EdgeCore</span>
+                <span style="color:#13c4a1;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;">IOT Systems</span>
+            </div>
+        </a>
+        <nav class="flex space-x-1 md:space-x-3 text-sm font-medium mt-3 md:mt-0 flex-wrap gap-y-2">
+            <a href="/home"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Home</a>
+            <a href="/product"   class="px-3 py-2 rounded text-cyan-400 hover:text-cyan-300 font-semibold">Product</a>
+            <a href="/shop"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Shop</a>
+            <a href="/blog"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Blog</a>
+            <a href="/resources" class="px-3 py-2 rounded text-slate-300 hover:text-white">Videos &amp; Info</a>
+            <a href="/support"   class="px-3 py-2 rounded text-slate-300 hover:text-white">Support</a>
+            <a href="/portal"    class="bg-cyan-600 text-white px-4 py-2 rounded-md hover:bg-cyan-500 transition-colors">Console Login</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-8 space-y-10">
+
+        <!-- Page Header -->
+        <div class="border-b border-slate-800 pb-6">
+            <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-950/50 border border-cyan-800/60 px-3 py-1 rounded-full">Hardware Ecosystem</span>
+            <h1 class="text-4xl font-black text-white mt-4 mb-2">Our Products</h1>
+            <p class="text-slate-400">Industrial-grade IoT hardware built for reliability in the harshest environments.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap gap-2">
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterProducts('controller')">Controllers</button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterProducts('sensor')">Sensors</button>
+            <button class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" onclick="filterProducts('accessory')">Accessories</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- V16 Hub -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-950/50" data-category="controller">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0d1f2d,#0a2a2a);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(19,196,161,0.3);"><span style="color:#fff;font-size:30px;font-weight:900;">V16</span></div>
+                    <span class="absolute top-3 right-3 text-xs bg-emerald-900/80 text-emerald-400 border border-emerald-700/50 px-2 py-0.5 rounded-full">In Stock</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-cyan-400 font-mono mb-1">EC-V16-CORE</div>
+                    <h2 class="text-base font-bold text-white mb-1">EdgeCore V16 Hub</h2>
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">RS485</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">GSM</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">LAN</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Relay</span>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">Main power relay control, integrated display management, RS485 Modbus, optimized LiPo charging with protection circuit. Dual GSM + LAN connectivity with automatic failover.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">MCU</span><span>ATmega2560</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Comms</span><span>GSM + ENC28J60 LAN</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Protocol</span><span>MQTT / Modbus RTU</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Protection</span><span>IP54 + Relay Isolation</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$145<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('EdgeCore V16 Hub','$145')" class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- V17 Industrial -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-violet-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-950/50" data-category="controller">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#1a0d2d,#0d1a2a);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(139,92,246,0.3);"><span style="color:#fff;font-size:28px;font-weight:900;">V17</span></div>
+                    <span class="absolute top-3 left-3 text-xs bg-violet-900/80 text-violet-300 border border-violet-700/50 px-2 py-0.5 rounded-full">Best Seller</span>
+                    <span class="absolute top-3 right-3 text-xs bg-sky-900/80 text-sky-400 border border-sky-700/50 px-2 py-0.5 rounded-full">New</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-violet-400 font-mono mb-1">EC-V17-IND</div>
+                    <h2 class="text-base font-bold text-white mb-1">EdgeCore V17.1 Industrial</h2>
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">OTA</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">IP65</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">GSM</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Modbus</span>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">Heavy overcurrent protection, direct-fit IP65 industrial housing, advanced OTA firmware updates over MQTT or GSM. Designed for continuous 24/7 industrial operation.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">MCU</span><span>ATmega2560</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Comms</span><span>GSM + LAN</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">OTA</span><span>MQTT / GSM</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Protection</span><span>IP65 Rated</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$185<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('EdgeCore V17.1 Industrial','$185')" class="bg-violet-600 hover:bg-violet-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sensor Kit -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-emerald-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-950/50" data-category="sensor">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0d2010,#0a2820);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#059669,#10b981);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(16,185,129,0.3);"><span style="color:#fff;font-size:22px;font-weight:900;">SEN</span></div>
+                    <span class="absolute top-3 right-3 text-xs bg-amber-900/80 text-amber-400 border border-amber-700/50 px-2 py-0.5 rounded-full">Bundle</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-emerald-400 font-mono mb-1">EC-SENS-KIT</div>
+                    <h2 class="text-base font-bold text-white mb-1">Sensor Integration Kit</h2>
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">RS485</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Depth</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Temp</span>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">Hydrostatic depth sensors, temperature probes, and RS485 adapters bundled for rapid industrial field deployment with a pre-calibrated datasheet.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Sensor Type</span><span>Hydrostatic + NTC Temp</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Interface</span><span>RS485 / 4-20mA</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Range</span><span>0–10m depth, -10–80°C</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Includes</span><span>Adapter Cable + Datasheet</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$89<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('Sensor Integration Kit','$89')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RS485 Adapter -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-sky-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1" data-category="accessory">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0a1a2d,#0d1f2a);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#0ea5e9,#38bdf8);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(56,189,248,0.3);"><span style="color:#fff;font-size:18px;font-weight:900;">RS485</span></div>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-sky-400 font-mono mb-1">EC-RS485-ADP</div>
+                    <h2 class="text-base font-bold text-white mb-1">RS485 Industrial Adapter</h2>
+                    <div class="flex gap-2 mb-3"><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Modbus</span><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">RS485</span></div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">Robust RS485-to-TTL adapter with industrial noise immunity. Supports up to 32 devices on a single bus at 115200 baud.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Baud</span><span>Up to 115200</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Bus Nodes</span><span>Up to 32 devices</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$18<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('RS485 Industrial Adapter','$18')" class="bg-sky-600 hover:bg-sky-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enclosure -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-amber-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1" data-category="accessory">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#1a1000,#2a1a00);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(245,158,11,0.3);"><span style="color:#fff;font-size:18px;font-weight:900;">IP65</span></div>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-amber-400 font-mono mb-1">EC-ENC-IP65</div>
+                    <h2 class="text-base font-bold text-white mb-1">IP65 Field Enclosure</h2>
+                    <div class="flex gap-2 mb-3"><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">IP65</span><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">DIN Rail</span></div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">Industrial-grade plastic enclosure with IP65 rating. Pre-drilled for cable glands, compatible with all EdgeCore boards.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Rating</span><span>IP65</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Mount</span><span>DIN Rail / Wall</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$32<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('IP65 Field Enclosure','$32')" class="bg-amber-600 hover:bg-amber-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GSM Antenna -->
+            <div class="product-card bg-slate-950 border border-slate-800 hover:border-rose-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1" data-category="accessory">
+                <div class="h-48 flex items-center justify-center relative" style="background:linear-gradient(135deg,#1a0a0a,#2a0d0d);">
+                    <div style="width:90px;height:90px;background:linear-gradient(135deg,#e11d48,#fb7185);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(251,113,133,0.3);"><span style="color:#fff;font-size:20px;font-weight:900;">GSM</span></div>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="text-xs text-rose-400 font-mono mb-1">EC-ANT-GSM</div>
+                    <h2 class="text-base font-bold text-white mb-1">External GSM Antenna</h2>
+                    <div class="flex gap-2 mb-3"><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">3dBi</span><span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">SMA</span></div>
+                    <p class="text-slate-400 text-xs mb-4 flex-grow">High-gain 3dBi external GSM antenna for improved signal in steel enclosures and basements. SMA connector, 1m cable.</p>
+                    <ul class="space-y-1.5 mb-4 border-t border-slate-800 pt-4">
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Gain</span><span>3 dBi</span></li>
+                        <li class="text-xs text-slate-300 flex justify-between"><span class="text-slate-500">Connector</span><span>SMA Male</span></li>
+                    </ul>
+                    <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                        <span class="text-2xl font-mono font-bold text-white">$12<span class="text-sm text-slate-400">.00</span></span>
+                        <button onclick="addToCart('External GSM Antenna','$12')" class="bg-rose-600 hover:bg-rose-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Cart Toast -->
+        <div id="cart-toast" class="fixed bottom-6 right-6 bg-emerald-800 border border-emerald-600 text-white px-5 py-3 rounded-xl shadow-xl text-sm font-medium opacity-0 pointer-events-none transition-all duration-300 z-50"></div>
+
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500 font-mono">
+        &copy; 2026 EdgeCoreIoT Framework Platform — Local Systems Engineering
+    </footer>
+
+    <script>
+        function filterProducts(cat) {
+            document.querySelectorAll('.product-card').forEach(c => {
+                c.style.display = (cat === 'all' || c.dataset.category === cat) ? 'flex' : 'none';
+            });
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.className = 'filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700';
+            });
+            event.target.className = 'filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white';
+        }
+
+        function addToCart(name, price) {
+            const toast = document.getElementById('cart-toast');
+            toast.textContent = `✓ ${name} (${price}) added to cart`;
+            toast.style.opacity = '1';
+            setTimeout(() => toast.style.opacity = '0', 3000);
+        }
+    </script>
+</body>
+</html>

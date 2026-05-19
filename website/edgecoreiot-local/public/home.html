@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeCoreIoT | Home</title>
+    <meta name="description" content="Industrial-grade IoT hardware for harsh environments. Real-time Modbus data acquisition, smart power control, and ruggedized hardware.">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center">
+        <a href="/home" class="flex items-center" style="gap:10px;text-decoration:none;">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 12px rgba(19,196,161,0.35);">
+                <span style="color:#fff;font-size:20px;font-weight:900;font-family:sans-serif;">E</span>
+            </div>
+            <div style="display:flex;flex-direction:column;line-height:1.1;">
+                <span style="color:#fff;font-size:18px;font-weight:800;letter-spacing:0.5px;">EdgeCore</span>
+                <span style="color:#13c4a1;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;">IOT Systems</span>
+            </div>
+        </a>
+        <nav class="flex space-x-1 md:space-x-3 text-sm font-medium mt-3 md:mt-0 flex-wrap gap-y-2">
+            <a href="/home"      class="px-3 py-2 rounded text-cyan-400 hover:text-cyan-300 font-semibold">Home</a>
+            <a href="/product"   class="px-3 py-2 rounded text-slate-300 hover:text-white">Product</a>
+            <a href="/shop"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Shop</a>
+            <a href="/blog"      class="px-3 py-2 rounded text-slate-300 hover:text-white">Blog</a>
+            <a href="/resources" class="px-3 py-2 rounded text-slate-300 hover:text-white">Videos &amp; Info</a>
+            <a href="/support"   class="px-3 py-2 rounded text-slate-300 hover:text-white">Support</a>
+            <a href="/portal"    class="bg-cyan-600 text-white px-4 py-2 rounded-md hover:bg-cyan-500 transition-colors">Console Login</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-8 space-y-12">
+
+        <!-- HERO -->
+        <div class="relative overflow-hidden rounded-2xl" style="background:linear-gradient(135deg,#0a1628 0%,#0d2137 50%,#061a1a 100%);border:1px solid #1e3a4a;">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 20% 50%,#13c4a1 0%,transparent 50%),radial-gradient(circle at 80% 20%,#0ea5e9 0%,transparent 40%);"></div>
+            <div class="relative px-8 py-16 md:py-24 max-w-4xl">
+                <span class="inline-block text-xs font-bold tracking-widest text-cyan-400 uppercase bg-cyan-950/60 border border-cyan-800/60 px-3 py-1 rounded-full mb-6">Industrial IoT Platform — v2026</span>
+                <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+                    Edge Intelligence<br><span style="color:#13c4a1;">For Harsh Environments</span>
+                </h1>
+                <p class="text-slate-300 text-lg max-w-2xl mb-8">Real-time Modbus data acquisition, smart power control, and ruggedized hardware built to operate where standard systems fail — factories, tanks, and chemical plants.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/product" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-6 py-3 rounded-lg transition-all hover:scale-105 inline-block">Browse Hardware →</a>
+                    <a href="/portal" class="border border-slate-600 hover:border-cyan-500 text-white px-6 py-3 rounded-lg transition-colors inline-block">Console Login</a>
+                </div>
+            </div>
+            <div class="absolute right-0 top-0 bottom-0 w-64 opacity-5" style="background-image:repeating-linear-gradient(0deg,#13c4a1 0px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#13c4a1 0px,transparent 1px,transparent 40px);"></div>
+        </div>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center hover:border-cyan-800 transition-colors">
+                <div class="text-3xl font-black text-cyan-400 mb-1">500+</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Active Deployments</div>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center hover:border-cyan-800 transition-colors">
+                <div class="text-3xl font-black text-emerald-400 mb-1">99.7%</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Uptime SLA</div>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center hover:border-cyan-800 transition-colors">
+                <div class="text-3xl font-black text-sky-400 mb-1">1.5s</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Data Cycle Rate</div>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center hover:border-cyan-800 transition-colors">
+                <div class="text-3xl font-black text-violet-400 mb-1">IP65</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Protection Rating</div>
+            </div>
+        </div>
+
+        <!-- FEATURED PRODUCTS -->
+        <div>
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-white">Featured Hardware</h2>
+                <a href="/product" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">View all →</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-950/50">
+                    <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0d1f2d,#0a2a2a);">
+                        <div style="width:80px;height:80px;background:linear-gradient(135deg,#0f9d8a,#13c4a1);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(19,196,161,0.3);"><span style="color:#fff;font-size:28px;font-weight:900;">V16</span></div>
+                        <span class="absolute top-3 right-3 text-xs bg-emerald-900/80 text-emerald-400 border border-emerald-700/50 px-2 py-0.5 rounded-full">In Stock</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-cyan-400 font-mono mb-1">EC-V16-CORE</div>
+                        <h3 class="text-base font-bold text-white mb-2">EdgeCore V16 Hub</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex-grow">Main power relay control, RS485 Modbus, LiPo charging with protection. GSM + LAN dual connectivity.</p>
+                        <ul class="space-y-1 mb-4">
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-cyan-400">✓</span> RS485 / Modbus RTU</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-cyan-400">✓</span> Relay Output Control</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-cyan-400">✓</span> GSM + LAN Dual Comm</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                            <span class="text-xl font-mono font-bold text-white">$145<span class="text-sm text-slate-400">.00</span></span>
+                            <button onclick="alert('Added EC-V16 to cart!')" class="bg-cyan-600 hover:bg-cyan-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-950/50">
+                    <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#1a0d2d,#0d1a2a);">
+                        <div style="width:80px;height:80px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(139,92,246,0.3);"><span style="color:#fff;font-size:26px;font-weight:900;">V17</span></div>
+                        <span class="absolute top-3 right-3 text-xs bg-sky-900/80 text-sky-400 border border-sky-700/50 px-2 py-0.5 rounded-full">New</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-violet-400 font-mono mb-1">EC-V17-IND</div>
+                        <h3 class="text-base font-bold text-white mb-2">EdgeCore V17.1 Industrial</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex-grow">Heavy overcurrent protection, IP65 housing, OTA firmware updates over MQTT or GSM.</p>
+                        <ul class="space-y-1 mb-4">
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-violet-400">✓</span> OTA Firmware Updates</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-violet-400">✓</span> Overcurrent Protection</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-violet-400">✓</span> IP65 Rated Housing</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                            <span class="text-xl font-mono font-bold text-white">$185<span class="text-sm text-slate-400">.00</span></span>
+                            <button onclick="alert('Added EC-V17 to cart!')" class="bg-violet-600 hover:bg-violet-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 hover:border-cyan-700 rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-950/50">
+                    <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0d2010,#0a2820);">
+                        <div style="width:80px;height:80px;background:linear-gradient(135deg,#059669,#10b981);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(16,185,129,0.3);"><span style="color:#fff;font-size:22px;font-weight:900;">SEN</span></div>
+                        <span class="absolute top-3 right-3 text-xs bg-amber-900/80 text-amber-400 border border-amber-700/50 px-2 py-0.5 rounded-full">Bundle</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-emerald-400 font-mono mb-1">EC-SENS-KIT</div>
+                        <h3 class="text-base font-bold text-white mb-2">Sensor Integration Kit</h3>
+                        <p class="text-slate-400 text-xs mb-4 flex-grow">Hydrostatic depth sensors, temperature probes, and RS485 adapters for rapid field deployment.</p>
+                        <ul class="space-y-1 mb-4">
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-emerald-400">✓</span> Hydrostatic Depth Sensor</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-emerald-400">✓</span> RS485 Adapter Cable</li>
+                            <li class="text-xs text-slate-400 flex items-center gap-2"><span class="text-emerald-400">✓</span> Calibration Datasheet</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                            <span class="text-xl font-mono font-bold text-white">$89<span class="text-sm text-slate-400">.00</span></span>
+                            <button onclick="alert('Added Sensor Kit to cart!')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-4 py-2 rounded-lg font-semibold transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAPABILITIES -->
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-2">Platform Capabilities</h2>
+            <p class="text-slate-400 text-sm mb-6">Everything you need to deploy, monitor, and manage industrial IoT hardware at scale.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">⚡</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">Real-Time Telemetry</h4><p class="text-slate-400 text-xs">WebSocket-based live data at 1.5s cycles. Monitor sensor values and power draw from any browser.</p></div>
+                </div>
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">🔒</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">JWT Secure Console</h4><p class="text-slate-400 text-xs">Token-based operator authentication with 1-hour session expiry and bcrypt-hashed credentials.</p></div>
+                </div>
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">📡</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">MQTT + OTA Updates</h4><p class="text-slate-400 text-xs">Push firmware updates over MQTT or GSM with zero downtime and packet validation.</p></div>
+                </div>
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">🏭</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">Modbus RTU / RS485</h4><p class="text-slate-400 text-xs">Native Modbus integration for hydrostatic sensors, industrial meters, and PLC interfaces.</p></div>
+                </div>
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">🔋</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">Smart Power Management</h4><p class="text-slate-400 text-xs">Software-controlled relays, LiPo charging with protection circuits, and configurable power rails.</p></div>
+                </div>
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 flex gap-4 hover:border-cyan-800 transition-colors">
+                    <div class="text-2xl">🌐</div>
+                    <div><h4 class="font-bold text-white text-sm mb-1">Dual Connectivity</h4><p class="text-slate-400 text-xs">GSM and LAN (ENC28J60) fallback comms. Auto reconnection and broker failover built-in.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOW IT WORKS -->
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-white mb-2">How It Works</h2>
+            <p class="text-slate-400 text-sm mb-8">From sensor to cloud in four steps.</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-lg font-black" style="background:linear-gradient(135deg,#0f9d8a,#13c4a1);color:#fff;">1</div>
+                    <h4 class="font-bold text-white text-sm">Connect Sensors</h4>
+                    <p class="text-slate-400 text-xs">Attach RS485/Modbus sensors or analog probes to the EdgeCore hardware terminal.</p>
+                </div>
+                <div class="text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-lg font-black" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:#fff;">2</div>
+                    <h4 class="font-bold text-white text-sm">Edge Processing</h4>
+                    <p class="text-slate-400 text-xs">Local firmware filters, averages, and validates data before transmission.</p>
+                </div>
+                <div class="text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-lg font-black" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;">3</div>
+                    <h4 class="font-bold text-white text-sm">MQTT Publish</h4>
+                    <p class="text-slate-400 text-xs">Telemetry published via MQTT over GSM or LAN with topic-based device routing.</p>
+                </div>
+                <div class="text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-lg font-black" style="background:linear-gradient(135deg,#059669,#10b981);color:#fff;">4</div>
+                    <h4 class="font-bold text-white text-sm">Dashboard Monitor</h4>
+                    <p class="text-slate-400 text-xs">View live readings, device status, and logs from the secure web console.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="rounded-2xl p-8 text-center" style="background:linear-gradient(135deg,#0a2a2a,#0d2137);border:1px solid #1e4a4a;">
+            <h2 class="text-2xl font-bold text-white mb-2">Ready to Deploy?</h2>
+            <p class="text-slate-400 text-sm mb-6">Get your first EdgeCore device online in under 30 minutes with our quickstart guide.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/product" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-8 py-3 rounded-lg transition-all hover:scale-105 inline-block">Order Hardware</a>
+                <a href="/resources" class="border border-slate-600 hover:border-slate-400 text-white px-8 py-3 rounded-lg transition-colors inline-block">Read Docs</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500 font-mono">
+        &copy; 2026 EdgeCoreIoT Framework Platform — Local Systems Engineering
+    </footer>
+</body>
+</html>
