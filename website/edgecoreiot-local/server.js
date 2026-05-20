@@ -4,6 +4,7 @@ const WebSocket = require('ws');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const mysql = require('mysql2/promise'); // Promises wrapper for modern async/await
 
 const app = express();
 const server = http.createServer(app);
@@ -16,15 +17,24 @@ const JWT_SECRET = 'edgecore_secret_key_123';
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// --- MYSQL DATABASE CONNECTION POOL ---
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'root',          // Your MySQL username (default is often root)
+    password: '',          // Your MySQL password (leave empty if none)
+    database: 'edgecore_db',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
-// Mock Local Databases
-const users = [];
-const devices = [
-    { id: "EC-V16-001", name: "Main Tank Controller", status: "Online", firmware: "v16.4" },
-    { id: "EC-V17-002", name: "Factory Floor Gateway", status: "Online", firmware: "v17.1" }
-];
+// Verify DB connection health on startup
+db.getConnection()
+    .then(() => console.log('💾 Connected successfully to edgecore_db MySQL instance.'))
+    .catch(err => console.error('❌ MySQL Connection Failed: ', err.message));
 
-// --- API ENDPOINTS ---
+
+// --- API ENDPOINTS (DB BACKED) ---
 
 // 1. User Registration
 app.post('/api/register', async (req, res) => {
@@ -33,14 +43,21 @@ app.post('/api/register', async (req, res) => {
         if (!email || !password) {
             return res.status(400).json({ success: false, message: "Email and password required" });
         }
-        if (users.find(u => u.email === email)) {
+
+        // Check if user already exists in DB
+        const [existingUsers] = await db.execute('SELECT id FROM users WHERE email = ?', [email]);
+        if (existingUsers.length > 0) {
             return res.status(400).json({ success: false, message: "User already exists" });
         }
+
+        // Encrypt and save to database
         const hashedPassword = await bcrypt.hash(password, 10);
-        users.push({ email, password: hashedPassword });
+        await db.execute('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword]);
+
         res.json({ success: true, message: "Registration successful!" });
     } catch (err) {
-        res.status(500).json({ success: false, message: "Server error during registration" });
+        console.error(err);
+        res.status(500).json({ success: false, message: "Database server error during registration" });
     }
 });
 
@@ -48,29 +65,41 @@ app.post('/api/register', async (req, res) => {
 app.post('/api/login', async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = users.find(u => u.email === email);
-        if (!user) return res.status(400).json({ success: false, message: "User not found" });
+        
+        // Find user in DB
+        const [rows] = await db.execute('SELECT * FROM users WHERE email = ?', [email]);
+        if (rows.length === 0) {
+            return res.status(400).json({ success: false, message: "User not found" });
+        }
 
+        const user = rows[0];
+
+        // Match pass hashes
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ success: false, message: "Invalid credentials" });
 
-        const token = jwt.sign({ email: user.email }, JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '1h' });
         res.json({ success: true, token, message: "Welcome to EdgeCore Portal" });
     } catch (err) {
-        res.status(500).json({ success: false, message: "Server error during login" });
+        console.error(err);
+        res.status(500).json({ success: false, message: "Database server error during login" });
     }
 });
 
 // 3. Get Registered IoT Devices
-app.get('/api/devices', (req, res) => {
-    res.json({ success: true, devices });
+app.get('/api/devices', async (req, res) => {
+    try {
+        const [devices] = await db.execute('SELECT * FROM devices');
+        res.json({ success: true, devices });
+    } catch (err) {
+        res.status(500).json({ success: false, message: "Failed to query devices" });
+    }
 });
 
 // --- REAL-TIME WEBSOCKET HARDWARE SIMULATOR ---
 wss.on('connection', (ws) => {
     console.log('🔄 Dashboard client connected to EdgeCore Data Stream.');
     
-    // Simulate live edge telemetry data transmission every 1.5 seconds
     const telemetryInterval = setInterval(() => {
         if (ws.readyState === WebSocket.OPEN) {
             const mockTelemetry = {
@@ -90,19 +119,7 @@ wss.on('connection', (ws) => {
     });
 });
 
-// --- UPDATED FOR EXPRESS 5 COMPATIBILITY ---
-// Using '(.*)' instead of '*' to avoid the "Missing parameter name" error
-// app.get('(.*)', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
-
-// Page routes
-app.get('/',        (req, res) => res.sendFile(path.join(__dirname, 'public', 'home.html')));
-app.get('/home',    (req, res) => res.sendFile(path.join(__dirname, 'public', 'home.html')));
-app.get('/product', (req, res) => res.sendFile(path.join(__dirname, 'public', 'product.html')));
-app.get('/blog',    (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog.html')));
-
-// Fallback: portal, resources, support, dashboard → index.html (SPA)
+// --- BULLETPROOF VERSION SPA MIDDLEWARE ---
 app.use((req, res, next) => {
     if (!req.url.startsWith('/api')) {
         res.sendFile(path.join(__dirname, 'public', 'index.html'));
